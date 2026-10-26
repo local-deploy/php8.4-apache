@@ -41,7 +41,7 @@ RUN  IPE_ICU_EN_ONLY=1 IPE_DONT_ENABLE=1 install-php-extensions \
 
 RUN install-php-extensions @composer-${COMPOSER_VERSION}
 
-RUN groupadd --gid ${GID} ${GID} && \
+RUN groupmod --gid ${GID} www-data && \
     usermod --non-unique --uid ${UID} www-data && \
     usermod --gid ${GID} www-data
 
